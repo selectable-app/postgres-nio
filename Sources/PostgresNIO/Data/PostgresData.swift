@@ -20,7 +20,7 @@ public struct PostgresData: Sendable {
     
     public var value: ByteBuffer?
     
-    public init(type: PostgresDataType, typeModifier: Int32? = nil, formatCode: PostgresFormat = .binary, value: ByteBuffer? = nil) {
+    public init(type: PostgresDataType, typeModifier: Int32? = nil, formatCode: PostgresFormat = .text, value: ByteBuffer? = nil) {
         self.type = type
         self.typeModifier = typeModifier
         self.formatCode = formatCode

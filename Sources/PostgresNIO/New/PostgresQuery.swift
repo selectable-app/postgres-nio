@@ -164,7 +164,7 @@ public struct PostgresBindings: Sendable, Hashable {
 
     public mutating func appendNull() {
         self.bytes.writeInteger(-1, as: Int32.self)
-        self.metadata.append(.init(dataType: .null, format: .binary, protected: true))
+        self.metadata.append(.init(dataType: .null, format: .text, protected: true))
     }
 
     @inlinable
@@ -221,7 +221,7 @@ public struct PostgresBindings: Sendable, Hashable {
             self.bytes.writeInteger(Int32(input.readableBytes))
             self.bytes.writeBuffer(&input)
         }
-        self.metadata.append(.init(dataType: postgresData.type, format: .binary, protected: true))
+        self.metadata.append(.init(dataType: postgresData.type, format: .text, protected: true))
     }
 }
 

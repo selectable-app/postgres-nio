@@ -186,10 +186,10 @@ struct ExtendedQueryStateMachine {
         // In the actual protocol description we receive a rowDescription before the Bind
 
         // In Postgres extended queries we always request the response rows to be returned in
-        // `.binary` format.
+        // `.text` format.
         let columns = rowDescription.columns.map { column -> RowDescription.Column in
             var column = column
-            column.format = .binary
+            column.format = .text
             return column
         }
 

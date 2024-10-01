@@ -51,7 +51,7 @@ struct PreparedStatementStateMachine {
             // When sending the bindings we are going to ask for binary data.
             if var rowDescription = rowDescription {
                 for i in 0..<rowDescription.columns.count {
-                    rowDescription.columns[i].format = .binary
+                    rowDescription.columns[i].format = .text
                 }
                 self.preparedStatements[name] = .prepared(rowDescription)
                 return PreparationCompleteAction(

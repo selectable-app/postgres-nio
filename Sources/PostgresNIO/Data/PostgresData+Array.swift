@@ -41,7 +41,7 @@ extension PostgresData {
         self.init(
             type: arrayType,
             typeModifier: nil,
-            formatCode: .binary,
+            formatCode: .text,
             value: buffer
         )
     }
@@ -63,7 +63,7 @@ extension PostgresData {
     }
 
     public var array: [PostgresData]? {
-        guard case .binary = self.formatCode else {
+        guard case .text = self.formatCode else {
             return nil
         }
         guard var value = self.value else {

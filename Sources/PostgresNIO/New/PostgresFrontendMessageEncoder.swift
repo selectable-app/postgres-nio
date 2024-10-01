@@ -77,7 +77,7 @@ struct PostgresFrontendMessageEncoder {
             // result columns of the query.
             buffer.writeInteger(1, as: Int16.self)
             // The result-column format codes. Each must presently be zero (text) or one (binary).
-            buffer.writeInteger(PostgresFormat.binary.rawValue, as: Int16.self)
+            buffer.writeInteger(PostgresFormat.text.rawValue, as: Int16.self)
         }
     }
 
